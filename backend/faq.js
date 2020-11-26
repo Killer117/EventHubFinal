@@ -3,7 +3,7 @@ const faqContents = [
     key: 1,
     keyword: "One",
     question: "What is Event Hub ?",
-    answer:"EventHub is a platform dedicated to provide customers with a wide assortment of different event management service plans of different companies for all sorts of corporate and personal events. Be it live shows, star nights, product launches, theme parties, wedding events, birthday parties, fashion shows, ghazal nights or any other event."
+    answer: "EventHub is a platform dedicated to provide customers with a wide assortment of different event management service plans of different companies for all sorts of corporate and personal events. Be it live shows, star nights, product launches, theme parties, wedding events, birthday parties, fashion shows, ghazal nights or any other event."
   },
   {
     key: 2,
@@ -12,10 +12,10 @@ const faqContents = [
     answer: "EventHub is a platform for you to find Event plans and Services provided by various Event organisers in the Market and contact them through EventHub.Therefore all types of Events that are provided by the organisers are present at the platform such as: Wedding, Birthday Celebrations, Theme Parties, Formal Events and independent services like Catering, Decoration, Music, etc.are available at EvenHub."
   },
   {
-    key:3,
-    keyword:"Three",
-    question:"How are different Event plans Rated?",
-    answer:"Rating of any Service or Event plan at EventHub is calculated solely by consumer feedback only. It is the average of the ratings given by every consumer that has booked that service or Event Plan."
+    key: 3,
+    keyword: "Three",
+    question: "How are different Event plans Rated?",
+    answer: "Rating of any Service or Event plan at EventHub is calculated solely by consumer feedback only. It is the average of the ratings given by every consumer that has booked that service or Event Plan."
   },
   {
     key: 4,
