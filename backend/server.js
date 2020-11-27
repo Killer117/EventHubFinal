@@ -6,6 +6,7 @@ const cors=require("cors");
 const bodyParser=require("body-parser");
 
 const userRoute=require("./routes/users");
+const organiserRoute=require("./routes/organisers.js");
 
 const QuestionSet=require("./models/faq");
 
@@ -18,6 +19,7 @@ mongoose.connect("mongodb+srv://EventHub:EventHub123@cluster0.ct8lt.mongodb.net/
 
 
 app.use("/api/users",userRoute);
+app.use("/api/organisers",organiserRoute);
 
 app.get("/api/faq",(req,res)=>{
     QuestionSet.find(function(err,faqContents){
