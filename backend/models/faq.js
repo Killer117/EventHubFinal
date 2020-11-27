@@ -1,3 +1,15 @@
+const mongoose=require("mongoose");
+
+const faqSchema=new mongoose.Schema({
+    key: Number,
+    keyword:String,
+    question:String,
+    answer:String    
+});
+
+const QuestionSet=mongoose.model("questionSet",faqSchema);
+
+
 const faqContents = [
   {
     key: 1,
@@ -54,4 +66,10 @@ const faqContents = [
   },
 ];
 
-module.exports = faqContents;
+
+QuestionSet.insertMany(faqContents)
+.catch(function(error){
+  console.log(error);
+});
+
+module.exports=QuestionSet;
