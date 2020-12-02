@@ -1,33 +1,35 @@
-const mongoose=require("mongoose");
+const mongoose = require("mongoose");
 
-const faqSchema=new mongoose.Schema({
-    key: Number,
-    keyword:String,
-    question:String,
-    answer:String    
+const faqSchema = new mongoose.Schema({
+  key: { type: Number },
+  keyword: String,
+  question: String,
+  answer: String,
 });
 
-const QuestionSet=mongoose.model("questionSet",faqSchema);
-
+const QuestionSet = mongoose.model("questionSet", faqSchema);
 
 const faqContents = [
   {
     key: 1,
     keyword: "One",
     question: "What is Event Hub ?",
-    answer: "EventHub is a platform dedicated to provide customers with a wide assortment of different event management service plans of different companies for all sorts of corporate and personal events. Be it live shows, star nights, product launches, theme parties, wedding events, birthday parties, fashion shows, ghazal nights or any other event."
+    answer:
+      "EventHub is a platform dedicated to provide customers with a wide assortment of different event management service plans of different companies for all sorts of corporate and personal events. Be it live shows, star nights, product launches, theme parties, wedding events, birthday parties, fashion shows, ghazal nights or any other event.",
   },
   {
     key: 2,
     keyword: "Two",
     question: "What type of events are available at EventHub?",
-    answer: "EventHub is a platform for you to find Event plans and Services provided by various Event organisers in the Market and contact them through EventHub.Therefore all types of Events that are provided by the organisers are present at the platform such as: Wedding, Birthday Celebrations, Theme Parties, Formal Events and independent services like Catering, Decoration, Music, etc.are available at EvenHub."
+    answer:
+      "EventHub is a platform for you to find Event plans and Services provided by various Event organisers in the Market and contact them through EventHub.Therefore all types of Events that are provided by the organisers are present at the platform such as: Wedding, Birthday Celebrations, Theme Parties, Formal Events and independent services like Catering, Decoration, Music, etc.are available at EvenHub.",
   },
   {
     key: 3,
     keyword: "Three",
     question: "How are different Event plans Rated?",
-    answer: "Rating of any Service or Event plan at EventHub is calculated solely by consumer feedback only. It is the average of the ratings given by every consumer that has booked that service or Event Plan."
+    answer:
+      "Rating of any Service or Event plan at EventHub is calculated solely by consumer feedback only. It is the average of the ratings given by every consumer that has booked that service or Event Plan.",
   },
   {
     key: 4,
@@ -41,7 +43,7 @@ const faqContents = [
     keyword: "Five",
     question: "Do I need to login to browse and use EventHub ?",
     answer:
-      "No, the login option is just for the users to keep track of their activity on the platform and to better communicate with the other party."
+      "No, the login option is just for the users to keep track of their activity on the platform and to better communicate with the other party.",
   },
   {
     key: 6,
@@ -65,11 +67,9 @@ const faqContents = [
       " If you're unable to find your answers in here, you can mail us your question at eventhub_help@gamil.com ",
   },
 ];
-
-
-QuestionSet.insertMany(faqContents)
-.catch(function(error){
+// QuestionSet.deleteMany({});
+QuestionSet.insertMany(faqContents).catch(function (error) {
   console.log(error);
 });
 
-module.exports=QuestionSet;
+module.exports = QuestionSet;

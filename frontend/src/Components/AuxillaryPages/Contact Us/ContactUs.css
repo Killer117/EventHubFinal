@@ -36,11 +36,11 @@ ul {
   list-style: none;
   color: black;
 }
-/* .contactUs-socialMedia {
-
-} */
-@media screen and (max-width:700px){
-  .contactUs-details{
+.contactUs-socialMedia {
+  bottom: 0% !important;
+}
+@media screen and (max-width: 700px) {
+  .contactUs-details {
     flex-direction: column !important;
     justify-content: center !important;
   }

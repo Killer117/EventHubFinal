@@ -24,20 +24,24 @@
   left: 0;
   width: 100%;
 }
+.faqs-card {
+  background-color: transparent !important;
+}
 .faqs-text {
   font-size: 4em;
   text-align: center;
 }
 .faqs-card-header {
   width: 100%;
-  background-color: #eee !important;
+  background-color: #ddd !important;
+  box-shadow: none !important;
   text-align: center;
+  height: 6rem !important;
 }
 .faqs-accordian-button {
-  font-size: 20px !important;
+  font-size: 20px;
 }
-.faqs-card {
-  background: white !important;
-  width: 70%;
-  box-shadow: 2px 2px 2px black;
+.faq-accordian {
+  width: 100% !important;
+  flex-wrap: wrap;
 }

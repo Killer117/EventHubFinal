@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import topBG from "../../pictures/topBG.png";
+import topBG from "../../pictures/topBG.jpg";
 import one from "../../pictures/one.jpg";
 import two from "../../pictures/two.jpg";
 import three from "../../pictures/three.jpg";

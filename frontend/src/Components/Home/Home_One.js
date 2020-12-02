@@ -1,6 +1,7 @@
 import React from "react";
-// import Home_Two from "./Home_Two";
-function Home_One({ handleClick }) {
+import { Link } from "react-router-dom";
+
+function Home_One() {
   return (
     <div>
       <div className="home__body__one  text-center d-flex flex-column justify-content-center align-items-center vh-100">
@@ -11,13 +12,11 @@ function Home_One({ handleClick }) {
         <p className="sub_sub_heading d-none d-sm-none d-lg-block">
           You can get all the events under a single hood
         </p>
-        <button
-          onClick={handleClick}
-          type="submit"
-          className="p-2 mt-4 border-0 getStarted"
-        >
-          GET STARTED
-        </button>
+        <Link to={`/filter`}>
+          <button type="submit" className="p-3 mt-4 border-0 getStarted">
+            SEARCH EVENTS
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Profile from "./Profile/Profile";
 import Notification from "./Notification/Notification";
 import Chats from "./Chats/Chats";
+
+import { setLoginStatus, getLoginStatus } from "../../../data/Data";
 
 function Navbar({ activeTab }) {
   const navbarContentsLeft = [
@@ -23,7 +25,13 @@ function Navbar({ activeTab }) {
       name: "Contact us",
     },
   ];
-
+  const [login, setLogin] = useState(getLoginStatus());
+  useEffect(() => {
+    const handleLogout = () => {
+      setLoginStatus(login);
+    };
+    handleLogout();
+  }, [login]);
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -70,9 +78,15 @@ function Navbar({ activeTab }) {
           />
 
           <div className="navbar-nav right d-flex flex-row">
-            <Notification />
-            <Chats />
-            <Profile />
+            <div className={` ${login ? "" : "d-none"}`}>
+              <Notification />
+            </div>
+            <div className={` ${login ? "" : "d-none"}`}>
+              <Chats />
+            </div>
+            <div>
+              <Profile login={login} setLogin={setLogin} />
+            </div>
           </div>
         </div>
       </nav>

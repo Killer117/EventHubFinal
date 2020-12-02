@@ -16,7 +16,7 @@
   box-shadow: 0px 0px 100px black;
 }
 .name {
-  font-size: 1.7em;
+  font-size: 1.4em;
   font-weight: 900;
 }
 .underline {
@@ -52,7 +52,7 @@ ul {
 /* Home__One */
 .home__body__one {
   color: white;
-  background: url("../../pictures/topBG.png") no-repeat center top;
+  background: url("../../pictures/topBG.jpg") no-repeat center top;
   background-size: cover;
   word-spacing: 10px;
   box-shadow: 0px 3px 20px black;
@@ -66,21 +66,20 @@ ul {
 .sub_heading {
   font-size: 1.6em;
   font-weight: 900;
-  color: white;
-  font-family: cursive !important;
+  color: aliceblue;
 }
 .sub_sub_heading {
   font-size: 1em;
   font-weight: 900;
-  font-family: cursive !important;
 }
 .getStarted {
   background: aqua;
   border-radius: 30em;
   color: black;
-  font-size: 1.5em;
-  box-shadow: 0px 0px 20px 3px black;
+  font-size: 1em;
+  /* box-shadow: 0px 0px 20px 3px black; */
   word-spacing: 5px;
+  font-weight: 700;
 }
 
 /* Home__Two */
@@ -92,7 +91,7 @@ ul {
 }
 .events_text {
   font-size: 2em;
-  font-family: cursive !important;
+
   font-weight: 900;
 }
 .cardsSet {
@@ -108,9 +107,9 @@ ul {
   width: 20rem;
   background: #eee !important;
 }
-.home__Two-cardSet :hover {
+/* .home__Two-cardSet :hover {
   box-shadow: 0px 0px 2px black;
-}
+} */
 /* Home __ Three */
 .home__three {
   margin-left: auto;
@@ -128,7 +127,6 @@ ul {
 }
 .home__three__header {
   font-size: 2em;
-  font-family: cursive !important;
   font-weight: 900;
   text-align: center;
   margin-top: 2em;
