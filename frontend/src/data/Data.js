@@ -1,7 +1,7 @@
 let Data = {
   login: { isLoggedIn: false },
   register: { userRegister: true },
-  userDetails: { name: "", state: "" },
+  userDetails: {},
   userRegister: true,
 };
 const setUserRegister = (isUserRegister) => {
@@ -25,8 +25,7 @@ const getRegisterPage = () => {
 };
 
 const setUserDetails = (obj) => {
-  Data.userDetails.name = obj.name;
-  Data.userDetails.state = obj.state;
+  Data.userDetails.id = obj.id;
 };
 const getUserDetails = () => {
   return Data.userDetails;

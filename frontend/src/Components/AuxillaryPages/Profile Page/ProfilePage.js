@@ -1,5 +1,4 @@
-
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../Home/Navbar/Navbar";
 import "./ProfilePage.css";
 import imgProfile from "../../../pictures/imgProfile.png";
@@ -7,12 +6,14 @@ import { getUserDetails } from "../../../data/Data";
 import axios from "axios";
 
 function ProfilePage() {
-  const [details,setDetails]=useState({});
+  const [details, setDetails] = useState({});
+  console.log(getUserDetails());
   useEffect(() => {
-    axios.get("http://localhost:5000/api/users/profile/5fc0cbb7c63a8b0c57edad54")
-    .then(function(res){
-      setDetails(res.data);      
-    });
+    axios
+      .get(`http://localhost:5000/api/users/profile/${getUserDetails().id}`)
+      .then(function (res) {
+        setDetails(res.data);
+      });
     document.title = "Profile";
   }, []);
 
@@ -24,7 +25,7 @@ function ProfilePage() {
     { key: 5, label: "Address : ", data: details.address },
     { key: 6, label: "State : ", data: details.state },
     { key: 7, label: "City : ", data: details.city },
-    { key: 8, label: "Pincode : ", data: details.pincode }
+    { key: 8, label: "Pincode : ", data: details.pincode },
   ];
   return (
     <div className="profilePage">
@@ -64,4 +65,3 @@ function ProfilePage() {
   );
 }
 export default ProfilePage;
-

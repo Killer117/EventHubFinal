@@ -40,16 +40,17 @@ function Login() {
     });
   };
   if (loggedIN.found === true) {
+    console.log(loggedIN);
     setLoginStatus(true);
     history.push(`/${getUserRegister() ? "user" : "company"}`);
     setUserRegister(true);
+    setUserDetails({ id: loggedIN.id });
     return null;
   } else {
     if (loggedIN.found === "incorrect") {
       alert("Incorrect email or password");
       window.location.reload(false);
     }
-
 
     return (
       <div className="login__page">
