@@ -3,6 +3,25 @@ const router = express.Router();
 
 const User = require("../models/User");
 
+router.get("/profile/:id",function(req,res){
+  var id=req.params.id;
+  
+  User.findOne({_id:id},function(err,foundUser){
+    date=new Date(foundUser.dob);
+    res.send({
+      name:foundUser.name.fname+" "+foundUser.name.lname,
+      email:foundUser.email,
+      gender:foundUser.gender,
+      address:foundUser.address.street,
+      state:foundUser.address.state,
+      city:foundUser.address.city,
+      pincode:foundUser.address.pincode,
+      dob:date.toDateString(),
+      mobile:foundUser.mobile
+    });
+  })
+});
+
 router.post("/register", function (req, res) {
   User.find({ email: req.body.email }, function (err, foundUsers) {
     if (foundUsers.length === 0) {
