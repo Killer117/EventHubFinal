@@ -67,9 +67,14 @@ const faqContents = [
       " If you're unable to find your answers in here, you can mail us your question at eventhub_help@gamil.com ",
   },
 ];
-// QuestionSet.deleteMany({});
-QuestionSet.insertMany(faqContents).catch(function (error) {
-  console.log(error);
+
+QuestionSet.find(function(err,ques){ 
+  if(ques.length===0){
+    QuestionSet.insertMany(faqContents).catch(function (error) {
+      console.log(error);
+    });  
+  }
 });
+
 
 module.exports = QuestionSet;
