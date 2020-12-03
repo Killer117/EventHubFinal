@@ -33,7 +33,7 @@ function Notification() {
   const [color, setColor] = useState(0);
   return (
     <div>
-      <Link className="d-flex flex-column p-2 m-1 justify-content-center align-items-center min-vw-20 min-vh-30 ">
+      <Link className="d-flex flex-column p-2 m-1 justify-content-center align-items-center min-vw-20 min-vh-30">
         <div className={window.innerWidth < 900 ? "dropdown" : "dropleft"}>
           <BsFillBellFill
             size="25px"
@@ -55,7 +55,7 @@ function Notification() {
                 <div className="notification-card">
                   <div className="card-body d-flex flex-row justify-content-between">
                     <div className="d-flex flex-wrap flex-column">
-                     <h5 className="card-title">
+                      <h5 className="card-title">
                         <b>{item.title}</b>
                       </h5>
                       <p className="card-text">{item.body}</p>

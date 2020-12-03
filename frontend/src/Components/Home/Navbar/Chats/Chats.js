@@ -40,9 +40,10 @@ function Chats() {
                       <h5 className="card-title">
                         <b>{item.sentBy}</b>
                       </h5>
-                      <p className="card-text">{ item.message }</p>
-                      <Link to="/"><p className="card-text">View Messages</p></Link>
-                      
+                      <p className="card-text">{item.message}</p>
+                      <Link to="/">
+                        <p className="card-text">View Messages</p>
+                      </Link>
                     </div>
                     <Link
                       className="d-flex flex-column align-items-center justify-content-center"
