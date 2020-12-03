@@ -47,12 +47,9 @@ function Login() {
   } else {
     if (loggedIN.found === "incorrect") {
       alert("Incorrect email or password");
-      setLoggedIn((prevLogin) => {
-        return {
-          found: false,
-        };
-      });
+      window.location.reload(false);
     }
+
 
     return (
       <div className="login__page">
