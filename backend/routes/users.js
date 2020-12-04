@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require("bcryptjs");
 
 const User = require("../models/User");
 
@@ -61,7 +62,8 @@ router.post("/login", function (req, res) {
       console.log(err);
     } else {
       if (foundUser) {
-        if (foundUser.password === password) {
+        const isMatch = bcrypt.compare(password, foundUser.password);
+        if (isMatch) {
           res.send({ found: true, id: foundUser._id });
           console.log("Successfully logged In");
         } else {
