@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Event = require("./Event");
+const bcrypt = require("bcryptjs");
 
 const usersSchema = new mongoose.Schema({
   name: {
@@ -26,6 +27,11 @@ const usersSchema = new mongoose.Schema({
     pincode: Number,
   },
   bookedEvents: [{ type: mongoose.Schema.Types.ObjectId, ref: "Event" }],
+});
+usersSchema.pre("save", async function (next) {
+  if (this.isModified("password")) {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
 });
 
 const User = mongoose.model("User", usersSchema);
